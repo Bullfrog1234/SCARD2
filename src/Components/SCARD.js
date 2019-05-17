@@ -18,6 +18,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import ranges from "./SelectOptions/Ranges";
 import regPerfomEmail from "./reg-perfom-email";
+import ChangeSize from "./ChangeSize";
 
 const styles = theme => ({
   heading: {
@@ -40,6 +41,8 @@ const styles = theme => ({
     width: "100%"
   }
 });
+
+const SCARDID = 192168;
 
 function SCARD(props) {
   const { classes } = props;
@@ -155,6 +158,9 @@ function SCARD(props) {
                   Size of Change
                 </Typography>
               </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <ChangeSize />
+              </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
@@ -174,7 +180,7 @@ function SCARD(props) {
                   If you are unsure if the proposed change has an associated
                   regulatory impact or to discuss the change’s safety reporting
                   requirements, contact Regulatory Performance:{" "}
-                  <a href={regPerfomEmail()}>
+                  <a href={regPerfomEmail(SCARDID)}>
                     RegulatoryPerformance@AirservicesAustralia.com
                   </a>
                   . <br />
